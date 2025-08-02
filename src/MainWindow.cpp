@@ -38,10 +38,7 @@ MainWindow::MainWindow(_<MyUpdater> updater)
                   .connect(&AView::clicked, slot(updater)::applyUpdateAndRestart);
           }
           return nullptr;
-      }),
-      Label { "Btw, 2 + 2 = {}"_format(sum(2, 2)) },
-      Label { "Version: " AUI_PP_STRINGIZE(AUI_CMAKE_PROJECT_VERSION) },
+      })
     } });
 }
 
-int MainWindow::sum(int a, int b) { return a + b; }

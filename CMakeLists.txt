@@ -1,8 +1,8 @@
 # Standard routine
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.24)
 project(example_app
         VERSION 0.0.10 # CI_PROJECT_VERSION
-    )
+)
 
 option(BUILD_SHARED_LIBS "Build shared libs" OFF)
 option(AUIB_FORCE_PRECOMPILED "AUI.Boot: force precompiled dependencies" OFF)
@@ -24,7 +24,9 @@ auib_import(aui https://github.com/aui-framework/aui
 
 # Create the executable. This function automatically links all sources from the src/ folder,
 # creates CMake target and places the resulting executable to bin/ folder.
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 aui_executable(${PROJECT_NAME})
+target_compile_definitions(example_app PRIVATE GLM_ENABLE_EXPERIMENTAL)
 
 # Link required libs
 aui_link(${PROJECT_NAME} PRIVATE aui::core aui::views aui::updater)
