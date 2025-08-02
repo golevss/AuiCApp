@@ -8,7 +8,8 @@
 
 using namespace declarative;
 
-MainWindow::MainWindow(void) : AWindow("AuiCApp", 300_dp, 200_dp) {
+MainWindow::MainWindow(void) : AWindow("AuiCApp", 300_dp, 200_dp)
+{
 
 }
 
