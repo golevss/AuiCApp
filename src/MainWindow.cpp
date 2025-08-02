@@ -8,7 +8,7 @@
 
 using namespace declarative;
 
-MainWindow::MainWindow(_<MyUpdater> updater) : AWindow("Project template app", 300_dp, 200_dp), mUpdater(std::move(updater)) {
+MainWindow::MainWindow(void) : AWindow("AuiCApp", 300_dp, 200_dp) {
 
 }
 
